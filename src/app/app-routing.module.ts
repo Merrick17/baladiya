@@ -12,6 +12,15 @@ const routes: Routes = [
     path: 'agentlogin',
     loadChildren: () => import('./agentlogin/agentlogin.module').then( m => m.AgentloginPageModule)
   },
+
+  {
+    path:'agentmain',
+    loadChildren:()=>import('./pages/agentmain/agentmain.module').then(m=>m.AgentmainPageModule) 
+  },  {
+    path: 'driverlist',
+    loadChildren: () => import('./pages/driverlist/driverlist.module').then( m => m.DriverlistPageModule)
+  }
+
 ];
 
 @NgModule({
