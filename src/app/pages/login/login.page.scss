@@ -1,0 +1,16 @@
+ion-item{
+    --background: #3880ff;
+    --color: #fff;
+    margin-bottom: 20px;
+}
+ion-button{
+    --background: #062f77;
+}
+
+.div {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //margin-left:8% !important ; 
+}
