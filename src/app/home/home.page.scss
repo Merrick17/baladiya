@@ -1,6 +1,7 @@
 
 ion-content ion-toolbar {
-  --background: translucent;
+  background: rgb(2,0,36);
+  --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(67,226,98,1) 45%, rgba(67,226,114,1) 83%);
 }
 
 .align{
