@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ActionSheetController } from '@ionic/angular';
 
 
 
@@ -10,11 +10,37 @@ import { ModalController } from '@ionic/angular';
 })
 export class DriverlistPage implements OnInit {
 
-  constructor(private modalCtrl:ModalController) { }
+  constructor(public actionSheetController: ActionSheetController) { }
 
   ngOnInit() {
   }
-
-
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Manage Driver',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'edit',
+        icon: 'create-outline',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
  
 }
