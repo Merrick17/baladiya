@@ -1,8 +1,9 @@
 ion-item{
-    --background: rgba(0,0,0,0);
-    //--color: #fff;
-    //padding: 20px;
+    --background: #3880ff;
+    --color: #fff;
+    margin-bottom: 20px;
     border-radius: 10px !important; 
+    //padding-top:20%; 
 }
 ion-button{
     --background: #062f77;
@@ -67,5 +68,39 @@ ion-content {
     --overflow: hidden !important;
 }
 ion-list{
-    --background: #3880ff;
+    background-color: #3880ff;
+    --overflow:40px !important; 
+    height: 100% !important;
 }
+
+.category-concept-card
+	{
+		background-color: white;
+		border-radius: 15px;
+		box-shadow: none;
+		margin-bottom: 20px;
+
+		.category-title
+		{
+			color: #FFF;
+			font-weight: 600;
+			font-size: 2.2rem;
+			margin: 0px;
+		}
+
+		.category-description
+		{
+			color: #FFF;
+			margin-bottom: 20px;
+		}
+
+		.category-tag
+		{
+			border: 1px solid #FFF;
+			color: #FFF;
+			background: transparent;
+			font-weight: 300;
+			margin-right: 4px;
+			opacity: 0.6;
+		}
+	}

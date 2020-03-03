@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,34 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private NavCtrl:NavController) { }
+  matricule:string =""; 
+  mdp:string=""; 
+  constructor(private NavController:NavController,private userService:UsersService,public toastController: ToastController) { }
 
   ngOnInit() {
   }
-
-  loginDriver()
-  {
-      this.NavCtrl.navigateRoot('/mapbox')
+  SignIn()
+  { this.userService.loginUser(this.matricule,this.mdp).subscribe(data=>{
+    let result :any = data ; 
+    if(result.auth==false)
+    {
+      this.presentToast(); 
+    }else
+    { localStorage.setItem('token',result.token); 
+      localStorage.setItem('type',result.type) ; 
+      this.NavController.navigateRoot('agentmain'); 
+    }
+    console.log(result); 
+  })
+   
   }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Wrong Id or Password.',
+      duration: 2000
+    });
+    toast.present();
+  }
+
 }

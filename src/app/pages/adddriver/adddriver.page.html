@@ -24,22 +24,25 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="Driver ID" ngModel required></ion-input>
+              <ion-input name="id" type="email" placeholder="Driver ID" [(ngModel)]="matricule" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="text" placeholder="Name" ngModel required></ion-input>
+              <ion-input name="name" type="text" placeholder="Name" [(ngModel)]="name" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="number" placeholder="Phone" ngModel required></ion-input>
+              <ion-input name="firstname" type="text" placeholder="First Name" [(ngModel)]="firstname" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+              <ion-input name="phone" type="number" placeholder="Phone" [(ngModel)]="phone" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="password" required></ion-input>
             </ion-item>
           </div>
           <div >
           <ion-row >
            
-              <ion-button expand="block" size="large" color="success">Save</ion-button>
+              <ion-button expand="block" size="large" color="success" (click)="addUser()">Save</ion-button>
               
            
             

@@ -1,3 +1,4 @@
+import { UsersService } from 'src/app/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -7,9 +8,11 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./agentlist.page.scss'],
 })
 export class AgentlistPage implements OnInit {
-  constructor(public actionSheetController: ActionSheetController) { }
+  Agents:any=[]; 
+  constructor(public actionSheetController: ActionSheetController, private userServ:UsersService) { }
 
   ngOnInit() {
+    this.getAllDrivers(); 
   }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -38,5 +41,14 @@ export class AgentlistPage implements OnInit {
       }]
     });
     await actionSheet.present();
+  }
+
+  getAllDrivers()
+  {
+    this.userServ.getAllUsers(0).subscribe(data=>{
+      let result :any = data ; 
+      this.Agents=result.result ; 
+      console.log(result); 
+    })
   }
 }

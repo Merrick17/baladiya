@@ -1,3 +1,4 @@
+import { UsersService } from 'src/app/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ActionSheetController } from '@ionic/angular';
 
@@ -9,12 +10,13 @@ import { ModalController, ActionSheetController } from '@ionic/angular';
   styleUrls: ['./driverlist.page.scss'],
 })
 export class DriverlistPage implements OnInit {
-
-  constructor(public actionSheetController: ActionSheetController) { }
+Drivers :any[]=[]; 
+  constructor(public actionSheetController: ActionSheetController,private usersServ:UsersService) { }
 
   ngOnInit() {
+    this.getAllDrivers(); 
   }
-  async presentActionSheet() {
+  async presentActionSheet(id) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Manage Driver',
       buttons: [{
@@ -43,4 +45,12 @@ export class DriverlistPage implements OnInit {
     await actionSheet.present();
   }
  
+  getAllDrivers()
+  {
+    this.usersServ.getAllUsers(1).subscribe(data=>{
+      let result :any = data ; 
+      this.Drivers=result.result ; 
+      console.log(result); 
+    })
+  }
 }
