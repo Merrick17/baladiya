@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-driverlist',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriverlistPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl:ModalController) { }
 
   ngOnInit() {
   }
 
+
+ 
 }

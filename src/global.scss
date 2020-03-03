@@ -26,13 +26,3 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
-content{
-
-    background-color: rgba(95,173,107,1);
-    background: filter-gradient(#5fad6b, #1cff64, horizontal);
-    background:  background-image(linear-gradient(left, rgba(95,173,107,1) 0%, rgba(28,255,100,1) 100%));
-}
-
-ion-content {
-    --overflow: hidden !important;
-}

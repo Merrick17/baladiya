@@ -1,0 +1,52 @@
+
+<ion-header color="primary" class="ion-no-border">
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-back-button color="light"
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  padding color="primary">
+  <div class="header" color="success" >
+
+<br>
+
+  </div>
+  <div class="grid">
+    <ion-grid >
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Driver ID" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="text" placeholder="Name" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="number" placeholder="Phone" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div >
+          <ion-row >
+           
+              <ion-button expand="block" size="large" color="success">Save</ion-button>
+              <ion-button expand="block" size="large" color="danger" (click)="getBack()">Cancel</ion-button>
+            
+          </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+</ion-content>

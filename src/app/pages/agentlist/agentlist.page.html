@@ -1,6 +1,16 @@
+<ion-header color="primary" class="ion-no-border">
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-back-button color="light"
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content  padding color="primary">
   <div class="header" color="success" >
-<ion-button color="light" size="large" fill="outline" routerLink="/adddriver"> Add a new driver</ion-button>
+<ion-button color="light" size="large" fill="outline" routerLink="/addagent"> Add a new agent</ion-button>
 <br>
 
   </div>
@@ -10,7 +20,7 @@
         <ion-card-header color="primary">
           <ion-item button (click)="buttonClick()">
             <ion-icon name="person" slot="start" color="light"></ion-icon>
-            <ion-label color="light">Driver Name</ion-label>
+            <ion-label color="light">Edit Agent</ion-label>
            <!---- <ion-button fill="outline" slot="end" color="light">Edit Driver</ion-button>-->
           </ion-item>
         </ion-card-header>
