@@ -15,34 +15,18 @@
 <br>
 
   </div>
-  <div class="grid">
-    <ion-list class="grid">
-      <ion-card>
-        <ion-card-header color="primary">
-          <ion-item button (click)="buttonClick()" class="btn">
-            <ion-icon name="person" slot="start" color="light"></ion-icon>
-            <ion-label color="light">Manage Truck</ion-label>
-           <!---- <ion-button fill="outline" slot="end" color="light">Edit Driver</ion-button>-->
-          </ion-item>
-        </ion-card-header>
-       
-      
-        <ion-card-content>
-        
-          <ion-item lines="none">
-            <ion-label>Name : </ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-label>Id : </ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-label>Phone : </ion-label>
-          </ion-item>
-      
-        </ion-card-content>
-      </ion-card>
-      
-    </ion-list>
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let driver of Agents" button (click)="presentActionSheet(driver.idusers)">
+      <ion-avatar slot="start">
+        <img src="/assets/icons8-utilisateur-96.png"/>
+      </ion-avatar>
+      <h3>{{driver.firstname}} {{driver.name}}
+        <br>
+      ID:  {{driver.matricule}}
+      </h3>
+    
+    </ion-item>
+ 
+  </ion-list>
  
 </ion-content>
