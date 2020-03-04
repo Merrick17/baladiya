@@ -21,10 +21,13 @@ export class LoginPage implements OnInit {
     if(result.auth==false)
     {
       this.presentToast(); 
-    }else
+    }else if(result.auth==true && result.type!=1)
+    {
+      this.presentToast2(); 
+    }else 
     { localStorage.setItem('token',result.token); 
       localStorage.setItem('type',result.type) ; 
-      this.NavController.navigateRoot('agentmain'); 
+      this.NavController.navigateRoot('mapbox'); 
     }
     console.log(result); 
   })
@@ -39,4 +42,11 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
+  async presentToast2() {
+    const toast = await this.toastController.create({
+      message: 'UNAUTHORIZED',
+      duration: 2000
+    });
+    toast.present();
+  }
 }

@@ -1,3 +1,5 @@
+import { TruckService } from './../../truck.service';
+import { UsersService } from './../../users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddtruckPage implements OnInit {
 
-  constructor() { }
+  driverID=""; 
+  weight=0; 
+  matricule=""; 
+  Drivers=[]; 
+  constructor(private driverservice : UsersService, private truckService:TruckService) { }
 
   ngOnInit() {
+    this.getAllDrivers(); 
+  }
+  getAllDrivers()
+  {
+    this.driverservice.getAllUsers(1).subscribe(data=>{
+      let result :any = data ; 
+      this.Drivers=result.result ; 
+      console.log(result); 
+      this.driverID=this.Drivers[0].idusers ; 
+    })
   }
 
+  addTruck()
+  {
+    this.truckService.addTruck(this.matricule,this.weight,this.driverID).subscribe(data =>{
+      let result:any = data ;
+      console.log(result); 
+    });
+  }
 }

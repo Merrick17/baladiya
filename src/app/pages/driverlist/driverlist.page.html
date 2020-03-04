@@ -1,11 +1,22 @@
 
+<ion-header color="primary" class="ion-no-border">
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-back-button color="light"
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content  padding color="primary">
   <div class="header" color="success" >
 <ion-button color="light" size="large" fill="outline" routerLink="/adddriver"> Add a new driver</ion-button>
 <br>
 
   </div>
-  <ion-list>
+  <ion-list lines="full">
     <ion-item *ngFor="let driver of Drivers" button (click)="presentActionSheet(driver.idusers)">
       <ion-avatar slot="start">
         <img src="/assets/steering-wheel.png"/>

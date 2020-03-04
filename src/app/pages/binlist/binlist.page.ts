@@ -1,3 +1,4 @@
+import { BinService } from './../../bin.service';
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -8,9 +9,13 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class BinlistPage implements OnInit {
 
-  constructor(public actionSheetController: ActionSheetController) { }
-
+  constructor(public actionSheetController: ActionSheetController, private binServ:BinService) { }
+  bins:any=[]; 
   ngOnInit() {
+    this.binServ.getAllBin().subscribe(data=>{
+      let result:any =data ; 
+      this.bins=result.result; 
+    })
   }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({

@@ -11,19 +11,21 @@
 
 <ion-content  padding color="primary">
   <div class="header" color="success" >
-<ion-button color="light" size="large" fill="outline" routerLink="/adddriver"> Add a new truck</ion-button>
+<ion-button color="light" size="large" fill="outline" routerLink="/addtruck"> Add a new truck</ion-button>
 <br>
 
   </div>
-  <ion-list>
-    <ion-item *ngFor="let driver of Agents" button (click)="presentActionSheet(driver.idusers)">
+  <ion-list lines="full">
+    <ion-item *ngFor="let truck of trucks" button (click)="presentActionSheet(truck.idtruck)">
       <ion-avatar slot="start">
-        <img src="/assets/icons8-utilisateur-96.png"/>
+        <img src="/assets/icons8-dépanneuse-96.png"/>
       </ion-avatar>
-      <h3>{{driver.firstname}} {{driver.name}}
+      <h5> Matricule:{{truck.matricule}} 
         <br>
-      ID:  {{driver.matricule}}
-      </h3>
+      Weight:  {{truck.weight}}
+      <br>
+      Assigned To : {{truck.assignedto}}
+      </h5>
     
     </ion-item>
  

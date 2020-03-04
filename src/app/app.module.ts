@@ -1,3 +1,4 @@
+import { BinService } from './bin.service';
 import { UsersService } from './users.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TruckService } from './truck.service';
 
 
 @NgModule({
@@ -20,8 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     UsersService,
-    
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    TruckService, 
+    BinService,
+      { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

@@ -24,22 +24,23 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="Driver ID" ngModel required></ion-input>
+              <ion-input name="mat"  placeholder="Matricule" [(ngModel)]="matricule" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="text" placeholder="Name" ngModel required></ion-input>
+              <ion-input name="weight" type="number" placeholder="Weight" [(ngModel)]="weight" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="number" placeholder="Phone" ngModel required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+              <ion-label>Driver Assigned To </ion-label>
+              <ion-select value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="driverID"> 
+                <ion-select-option [value]="driver.idusers" *ngFor ="let driver of Drivers">{{driver.name}} {{driver.firstname}}</ion-select-option>
+                
+              </ion-select>
             </ion-item>
           </div>
           <div >
           <ion-row >
            
-              <ion-button expand="block" size="large" color="success">Save</ion-button>
+              <ion-button expand="block" size="large" color="success" (click)="addTruck()"> Save</ion-button>
               <ion-button expand="block" size="large" color="danger" (click)="getBack()">Cancel</ion-button>
             
           </ion-row>
