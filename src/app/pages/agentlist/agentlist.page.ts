@@ -48,7 +48,7 @@ export class AgentlistPage implements OnInit {
     this.userServ.getAllUsers(0).subscribe(data=>{
       let result :any = data ; 
       this.Agents=result.result ; 
-      console.log(result); 
+      console.log(this.Agents); 
     })
   }
 }

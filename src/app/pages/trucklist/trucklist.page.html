@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content  padding color="primary">
-  <div class="header" color="success" >
+  <div class="header" color="success" slot="fixed" >
 <ion-button color="light" size="large" fill="outline" routerLink="/addtruck"> Add a new truck</ion-button>
 <br>
 
@@ -20,12 +20,11 @@
       <ion-avatar slot="start">
         <img src="/assets/icons8-dépanneuse-96.png"/>
       </ion-avatar>
-      <h5> Matricule:{{truck.matricule}} 
-        <br>
-      Weight:  {{truck.weight}}
-      <br>
-      Assigned To : {{truck.assignedto}}
-      </h5>
+      <ion-label>
+        <h5>Vehicule ID : {{truck.matricule}} </h5>
+        <h5>Association To : {{truck.affected_to}}</h5>
+      </ion-label>
+    
     
     </ion-item>
  

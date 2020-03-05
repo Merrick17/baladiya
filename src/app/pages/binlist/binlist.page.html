@@ -8,21 +8,23 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content  padding color="primary">
-  <div class="header" color="success" >
+  <div class="header" color="success" slot="fixed">
 <ion-button color="light" size="large" fill="outline" routerLink="/addbin"> Add a new bin</ion-button>
 <br>
 
   </div>
-  <ion-list>
-    <ion-item *ngFor="let driver of Agents" button (click)="presentActionSheet(driver.idusers)">
+  <ion-list lines="full">
+    <ion-item *ngFor="let bin of bins" button (click)="presentActionSheet(bin.idbin)">
       <ion-avatar slot="start">
-        <img src="/assets/icons8-utilisateur-96.png"/>
+        <img src="/assets/icons8-déchets-96.png"/>
       </ion-avatar>
-      <h3>{{driver.firstname}} {{driver.name}}
-        <br>
-      ID:  {{driver.matricule}}
-      </h3>
+     <ion-label>
+       <h3>Location: {{bin.location}} </h3>
+       <h3>Association : {{bin.assignedto}} </h3>
+
+     </ion-label>
     
     </ion-item>
  

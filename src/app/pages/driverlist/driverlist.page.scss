@@ -1,7 +1,7 @@
 ion-item{
     --background: #3880ff;
     --color: #fff;
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     border-radius: 10px !important; 
     //padding-top:20%; 
 }
@@ -28,7 +28,7 @@ ion-card{
     align-items: center;
     justify-content: center;
     
-    //background-color: #3880ff;
+    background-color: #3880ff;
     //border-bottom-left-radius: 30px;
     //border-bottom-right-radius: 30px;
 }
@@ -65,7 +65,7 @@ ion-input{
     opacity: 0.2;
 }
 ion-content {
-    --overflow: hidden !important;
+    //--overflow: hidden !important;
 }
 ion-list{
     background-color: #3880ff;

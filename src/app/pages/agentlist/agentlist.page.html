@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content  padding color="primary">
-  <div class="header" color="success" >
+  <div class="header" color="success" slot="fixed">
 <ion-button color="light" size="large" fill="outline" routerLink="/addagent"> Add a new agent</ion-button>
 <br>
 
@@ -19,10 +19,10 @@
       <ion-avatar slot="start">
         <img src="/assets/icons8-utilisateur-96.png"/>
       </ion-avatar>
-      <h3>{{driver.firstname}} {{driver.name}}
-        <br>
-      ID:  {{driver.matricule}}
-      </h3>
+      <ion-label>
+        <h2>{{driver.name}} {{driver.firstname}}</h2>
+        <p>{{driver.matricule}}</p>
+      </ion-label>
     
     </ion-item>
  
