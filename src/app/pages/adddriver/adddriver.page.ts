@@ -26,10 +26,10 @@ export class AdddriverPage implements OnInit {
     this.userSer.addUser(this.name,this.firstname,this.password,this.matricule,this.type,this.phone).subscribe(data=>{
 
       let result:any = data ; 
-      if(result.affectedRows==1)
+      if(result.affectedRows!=null)
       {
         this.presentToast(); 
-        this.navCtrl.pop(); 
+        this.navCtrl.navigateBack('driverlist'); 
       }
       console.log(data); 
     })
@@ -41,6 +41,11 @@ export class AdddriverPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  getBack()
+  {
+    this.navCtrl.navigateBack('driverlist'); 
   }
 
 }

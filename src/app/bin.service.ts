@@ -14,13 +14,14 @@ export class BinService {
        return this.http.get(this.BASE_URL,{headers:{'x-access-token':token}}) ;
   }
 
-  addBin(location,weight,alt,lng)
+  addBin(location,weight,alt,lng,driver)
   { let token = localStorage.getItem('token');
    return this.http.post(this.BASE_URL+'/add',{
       'location':location,
       'wieght':weight,
       'alt':alt,
-      'lng':lng
+      'lng':lng,
+      'driver':driver
     },{
       'headers':{'x-access-token':token}
     }

@@ -1,6 +1,12 @@
 <ion-content  padding color="primary">
   <div class="header" color="success">
-
+    <ion-row>
+      <ion-col justify-content-center>
+        <img src = "/assets/icons8-utilisateur-96.png"  style="margin-left:35%"/>
+        <h1 style="margin-left:30%">Driver Login</h1>
+      </ion-col>
+    </ion-row>
+  
 <br>
 
   </div>
@@ -12,11 +18,11 @@
         <ion-row color="primary" justify-content-center>
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
             <div text-center>
-              <h3>Login</h3>
+              
             </div>
             <div padding>
               <ion-item>
-                <ion-input name="matriucle" type="email" placeholder="Agent ID" [(ngModel)]="matricule" required></ion-input>
+                <ion-input name="matriucle" type="email" placeholder="Driver ID" [(ngModel)]="matricule" required></ion-input>
               </ion-item>
               <ion-item>
                 <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="mdp" required></ion-input>

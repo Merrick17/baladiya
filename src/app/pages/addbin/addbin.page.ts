@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { BinService } from './../../bin.service';
 import { UsersService } from './../../users.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,21 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddbinPage implements OnInit {
   Drivers=[]; 
-  driverID=[]; 
+  driverID=1; 
   lng=0 
   alt=0 
   location=""; 
   weight:number=0; 
   //bins=[]
-  constructor( private driverservice:UsersService,private binService:BinService) { }
+  constructor( private driverservice:UsersService,private binService:BinService,private NavCtrl:NavController) { }
 
   ngOnInit() {
     this.getAllDrivers(); 
   }
   addBin()
   {
-    this.binService.addBin(this.location,this.weight,this.alt,this.lng).subscribe(data=>{
+    this.binService.addBin(this.location,this.weight,this.alt,this.lng,this.driverID).subscribe(data=>{
       let result:any=data; 
+      if(result.affectedRows!=null)
+      {
+        //this.presentToast(); 
+        this.NavCtrl.navigateBack('driverlist'); 
+      }
       console.log(result); 
     })
   }
@@ -35,5 +41,9 @@ export class AddbinPage implements OnInit {
       console.log(result); 
       this.driverID=this.Drivers[0].idusers ; 
     })
+  }
+  getBack()
+  {
+    this.NavCtrl.navigateBack('driverlist'); 
   }
 }

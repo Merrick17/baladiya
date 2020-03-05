@@ -1,3 +1,4 @@
+
 <ion-header color="primary" class="ion-no-border">
   <ion-toolbar color="primary" >
     <ion-buttons slot="start">
@@ -9,7 +10,6 @@
   </ion-toolbar>
 </ion-header>
 <ion-content  padding color="primary">
-  
   <div class="header" color="success" >
 
 <br>
@@ -24,18 +24,16 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="mat"  placeholder="location" [(ngModel)]="location" required></ion-input>
+              <ion-input name="mat" type="number" placeholder="Latitude" [(ngModel)]="alt" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-item>
-                <ion-input name="mat"  placeholder="altitute" [(ngModel)]="alt" required></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-item>
-                  <ion-input name="mat"  placeholder="longitude" [(ngModel)]="lng" required></ion-input>
-                </ion-item>
-                <ion-item>
+              <ion-input name="weight" type="number" placeholder="Longitude" [(ngModel)]="lng" required></ion-input>
+            </ion-item>
+            <ion-item>
               <ion-input name="weight" type="number" placeholder="Weight" [(ngModel)]="weight" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="location" type="text" placeholder="Location" [(ngModel)]="location" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label>Driver Assigned To </ion-label>
@@ -48,9 +46,8 @@
           <div >
           <ion-row >
            
-              <ion-button expand="block" size="large" color="success">Save</ion-button>
-              
-           
+              <ion-button expand="block" size="large" color="success" (click)="addBin()"> Save</ion-button>
+              <ion-button expand="block" size="large" color="danger" (click)="getBack()">Cancel</ion-button>
             
           </ion-row>
           </div>

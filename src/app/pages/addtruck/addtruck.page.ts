@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { TruckService } from './../../truck.service';
 import { UsersService } from './../../users.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class AddtruckPage implements OnInit {
   weight=0; 
   matricule=""; 
   Drivers=[]; 
-  constructor(private driverservice : UsersService, private truckService:TruckService) { }
+  constructor(private driverservice : UsersService, private truckService:TruckService, private NavController:NavController) { }
 
   ngOnInit() {
     this.getAllDrivers(); 
@@ -32,6 +33,10 @@ export class AddtruckPage implements OnInit {
   {
     this.truckService.addTruck(this.matricule,this.weight,this.driverID).subscribe(data =>{
       let result:any = data ;
+      if(result.affectedRows!=null)
+      {
+        this.NavController.navigateBack('/trucklist')
+      }
       console.log(result); 
     });
   }
