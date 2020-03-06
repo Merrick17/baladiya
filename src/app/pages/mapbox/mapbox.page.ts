@@ -26,10 +26,11 @@ export class MapboxPage implements OnInit {
    
   }
 getAllMarkers()
-{
-  this.binService.getAllBin().subscribe(data=>{
+{ let id = localStorage.getItem('id');
+  this.binService.getBinById(id).subscribe(data=>{
     let result:any = data; 
-    this.markers=result.result; 
+    console.log("Markers",result)
+    this.markers=result; 
     this.buildMap();
     console.log(this.markers);
   })
@@ -67,7 +68,11 @@ getAllMarkers()
   {
     let cordinates = [] ; 
     this.markers.forEach(elm=>{
-      cordinates.push([elm.alt,elm.lng]);
+      if(elm.alt !=0 && elm.lng!=0)
+      {
+        cordinates.push([elm.alt,elm.lng]);
+      }
+    
     }) ; 
     console.log("cordinates",cordinates); 
    

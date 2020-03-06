@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
     }else 
     { localStorage.setItem('token',result.token); 
       localStorage.setItem('type',result.type) ; 
+      localStorage.setItem('id',result.id); 
       this.NavController.navigateRoot('mapbox'); 
     }
     console.log(result); 

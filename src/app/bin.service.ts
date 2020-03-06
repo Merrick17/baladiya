@@ -28,10 +28,10 @@ export class BinService {
     )
   }
 
-  deleteTruck(truckID)
+  deletebin(binID)
   {
     let token = localStorage.getItem('token');
-   return this.http.delete(this.BASE_URL+'/delete/'+truckID,{
+   return this.http.delete(this.BASE_URL+'/delete/'+binID,{
       'headers':{'x-access-token':token}
     }
     )
@@ -47,5 +47,11 @@ export class BinService {
       'headers':{'x-access-token':token}
     }
     )
+  }
+
+  getBinById(userId)
+  {
+    let token = localStorage.getItem('token');
+    return this.http.get(this.BASE_URL+'/bydriver/'+userId,{headers:{'x-access-token':token}}) ;
   }
 }

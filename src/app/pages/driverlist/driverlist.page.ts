@@ -25,6 +25,7 @@ Drivers :any[]=[];
         icon: 'trash',
         handler: () => {
           console.log('Delete clicked');
+          //this.usersServ.deleteUser()
         }
       }, {
         text: 'edit',
